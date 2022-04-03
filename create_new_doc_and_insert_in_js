@@ -1,0 +1,20 @@
+frappe.call({
+    method: 'frappe.client.insert',
+    args: {
+        doc: {doctype: 'Purchase Order',
+        supplier: 'Intel',
+	items: [{"item_code": "XXX141-C-WF",
+		"item_name": "XXX141-C-WF",
+		"schedule_date": "2019-03-30",
+		"description": "Wafer Test",
+		"qty": 12,
+		"stock_uom": "EA",
+		"uom": "EA",
+		"conversion_factor": 1,
+		"base_rate": 12,
+		"base_amount": 12,}]},
+    },
+    callback: function(r) {
+                console.log(r);
+		}
+});
